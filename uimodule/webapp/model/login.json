@@ -1,0 +1,19 @@
+{
+  "SelectDatabases":
+  [
+      {
+          "Code": "REVIVE_DEV_INTEG_TESTING",
+          "Desc": "REVIVE_DEV_INTEG_TESTING"
+      },
+      {
+          "Code": "SBODEMOUS",
+          "Desc": "SBO Demo US"
+      }
+  ],
+
+  "DataRecord": {
+      "Database": "REVIVE_DEV_INTEG_TESTING",
+      "UserName": "apptech",
+      "Password": "P@ssw0rd1"
+  }
+}

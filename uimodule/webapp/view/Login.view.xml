@@ -1,11 +1,84 @@
  <mvc:View controllerName="com.apptech.ui5dayone.controller.Login"
   displayBlock="true"
   xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
+  xmlns:mvc="sap.ui.core.mvc"
+
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core">
+
   <App id="idAppControl" >
     <pages>
       <Page title="{i18n>title}">
-        <content></content>
+        <content>
+          <Panel xmlns="sap.m" class="sapUiResponsiveContentPadding" width="auto" expandable="false" expanded="true" headerText="Panel with SimpleForm">
+						<headerToolbar>
+							<Toolbar id="toolbar1">
+								<Title text="Login"/>
+								<ToolbarSpacer/>
+							</Toolbar>
+						</headerToolbar>
+            <content>
+              <f:SimpleForm editable="true" layout="ResponsiveGridLayout" width="100%">
+							<f:content>
+              <!-- FOR DROPDOWN -->
+                       <Label text="DATABASE" width="100%">
+                          <layoutData>
+                            <l:GridData span="L2 M4 S12"/>
+                          </layoutData>
+                        </Label>
+                    <Select  items="{oModel>/SelectDatabases}" selectedKey="{oModel>/DataRecord/Database}">
+                        <core:ListItem key="{oModel>Code}" text="{oModel>Desc}" />
+                        <layoutData>
+                          <l:GridData span="L10 M8 S12"/>
+                        </layoutData>
+                    </Select>
+              <!-- END DROPDOWN -->
+
+              <!-- FOR USERNAME -->
+                  <Label text="Username" width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+
+								<Input width="100%" required="true" value="{oModel>/DataRecord/UserName}">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+									</Input>
+            <!-- END USERNAME -->
+
+            <!-- FOR PASSWORD -->
+									<Label text="Password" width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+									<Input width="100%"  type="Password" required="true" value="{oModel>/DataRecord/Password}">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+									</Input>
+            <!-- END PASSWORD -->
+
+            <!-- SUBMIT -->
+            <Label width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+             <Button xmlns="sap.m" text="Login"  icon="sap-icon://visits" iconFirst="false" type="Emphasized" press="onLogin">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+					 	</Button>
+            <!-- END SUBMIT -->
+						  </f:content>
+						</f:SimpleForm>
+						</content>
+					</Panel>
+        </content>
       </Page>
     </pages>
   </App>

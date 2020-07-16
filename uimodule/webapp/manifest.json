@@ -28,7 +28,7 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "com.apptech.ui5dayone.view.Login",
+      "viewName": "com.apptech.ui5dayone.view.Item",
       "type": "XML",
       "async": true,
       "id": "idAppControl"
@@ -76,6 +76,13 @@
           "target": [
             "TargetLogin"
           ]
+        },
+        {
+          "name": "Item",
+          "pattern": "Item",
+          "target": [
+            "Item"
+          ]
         }
       ],
       "targets": {
@@ -85,6 +92,12 @@
           "viewId": "idAppControl",
           "viewName": "Login"
         }
+      },
+      "Item": {
+        "viewType": "XML",
+        "viewLevel": 1,
+        "viewId": "idAppControl",
+        "viewName": "Item"
       }
     }
   }

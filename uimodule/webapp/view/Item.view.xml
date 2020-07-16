@@ -1,0 +1,63 @@
+ <mvc:View controllerName="com.apptech.ui5dayone.controller.Item"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:t="sap.ui.table"
+  >
+  <App id="Item" >
+    <pages>
+      <Page title="{i18n>title}">
+        <content>
+        <Button text="ADD ROW" press="onAddRow"/>
+        <Button text="REMOVE ROW" press="onRemoveRow"/>
+        <!-- TABLE START -->
+        <t:Table
+				rows="{oModel>/Items}"
+        id="productTable"
+				selectionMode="Single"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<t:extension>
+					<OverflowToolbar>
+						<Title id="title" text="Products"/>
+					</OverflowToolbar>
+				</t:extension>
+        <!-- COLUMN START -->
+				<t:columns>
+					<t:Column width="11rem">
+						<Label text="Item Code" />
+						<t:template>
+							<Text text="{oModel>ItemCode}" wrapping="false" />
+						</t:template>
+					</t:Column>
+
+          <t:Column width="11rem">
+						<Label text="Item Name" />
+						<t:template>
+							<Text text="{oModel>ItemName}" wrapping="false" />
+						</t:template>
+					</t:Column>
+
+          <t:Column width="11rem">
+						<Label text="Quantity" />
+						<t:template>
+							<Text text="{oModel>Quantity}" wrapping="false" />
+						</t:template>
+					</t:Column>
+
+          <t:Column width="11rem">
+						<Label text="Product Price" />
+						<t:template>
+							<Text text="{oModel>UnitPrice}" wrapping="false" />
+						</t:template>
+					</t:Column>
+          </t:columns>
+<!-- COLUMN END -->
+        </t:Table>
+<!-- TABLE END -->
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>
