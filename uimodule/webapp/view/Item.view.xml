@@ -3,6 +3,9 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:t="sap.ui.table"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
   >
   <App id="Item" >
     <pages>
@@ -10,6 +13,64 @@
         <content>
         <Button text="ADD ROW" press="onAddRow"/>
         <Button text="REMOVE ROW" press="onRemoveRow"/>
+
+         <f:SimpleForm editable="true" layout="ResponsiveGridLayout" width="100%">
+							<f:content>
+              <!-- FOR DROPDOWN -->
+                       <Label text="Item Code" width="100%">
+                          <layoutData>
+                            <l:GridData span="L2 M4 S12"/>
+                          </layoutData>
+                        </Label>
+                    <Select  items="{oModel>/SelectDatabases}" selectedKey="{oModel>/DataRecord/Database}">
+                        <core:ListItem key="{oModel>Code}" text="{oModel>Desc}" />
+                        <layoutData>
+                          <l:GridData span="L10 M8 S12"/>
+                        </layoutData>
+                    </Select>
+              <!-- END DROPDOWN -->
+
+              <!-- FOR USERNAME -->
+                  <Label text="Item Name" width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+
+							  	<Input width="100%"  value="{oModel>/DataRecord/UserName}">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+									</Input>
+            <!-- END USERNAME -->
+
+            <!-- FOR PASSWORD -->
+									<Label text="Quantity" width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+									<Input width="100%"  type="Password"  value="{oModel>/DataRecord/Password}">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+									</Input>
+            <!-- END PASSWORD -->
+
+              <!-- FOR PASSWORD -->
+									<Label text="Product Price" width="100%">
+										<layoutData>
+											<l:GridData span="L2 M4 S12"/>
+										</layoutData>
+									</Label>
+									<Input width="100%"  type="Password"  value="{oModel>/DataRecord/Password}">
+										<layoutData>
+											<l:GridData span="L10 M8 S12"/>
+										</layoutData>
+									</Input>
+            <!-- END PASSWORD -->
+						  </f:content>
+						</f:SimpleForm>
         <!-- TABLE START -->
         <t:Table
 				rows="{oModel>/Items}"
