@@ -22,12 +22,11 @@
                             <l:GridData span="L2 M4 S12"/>
                           </layoutData>
                         </Label>
-                    <Select  items="{oModel>/SelectDatabases}" selectedKey="{oModel>/DataRecord/Database}">
-                        <core:ListItem key="{oModel>Code}" text="{oModel>Desc}" />
-                        <layoutData>
-                          <l:GridData span="L10 M8 S12"/>
-                        </layoutData>
-                    </Select>
+                      <Input width="100%"  value="{oModel>/DataRecord/ItemCode}">
+                      <layoutData>
+                        <l:GridData span="L10 M8 S12"/>
+                      </layoutData>
+                    </Input>
               <!-- END DROPDOWN -->
 
               <!-- FOR USERNAME -->
@@ -37,7 +36,7 @@
 										</layoutData>
 									</Label>
 
-							  	<Input width="100%"  value="{oModel>/DataRecord/UserName}">
+							  	<Input width="100%"  value="{oModel>/DataRecord/ItemName}">
 										<layoutData>
 											<l:GridData span="L10 M8 S12"/>
 										</layoutData>
@@ -50,7 +49,7 @@
 											<l:GridData span="L2 M4 S12"/>
 										</layoutData>
 									</Label>
-									<Input width="100%"  type="Password"  value="{oModel>/DataRecord/Password}">
+									<Input width="100%"  type="Number"  value="{oModel>/DataRecord/Quantity}">
 										<layoutData>
 											<l:GridData span="L10 M8 S12"/>
 										</layoutData>
@@ -63,7 +62,7 @@
 											<l:GridData span="L2 M4 S12"/>
 										</layoutData>
 									</Label>
-									<Input width="100%"  type="Password"  value="{oModel>/DataRecord/Password}">
+									<Input width="100%"  type="Number"  value="{oModel>/DataRecord/UnitPrice}">
 										<layoutData>
 											<l:GridData span="L10 M8 S12"/>
 										</layoutData>
